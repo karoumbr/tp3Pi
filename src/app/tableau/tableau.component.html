@@ -1,0 +1,13 @@
+<h1>{{ titre }}</h1>
+<ul>
+    <ng-container *ngFor="let t of tab; index as indice; count as compteur">
+ <li *ngIf="t%2==0" > 
+    <span [ngStyle]="{color:colorier(t), 'font-style':style}" >{{t}}</span>
+    <i [ngClass]="{ 'fa': true, 'fa-arrow-circle-down': t<50, 'fa-arrow-circle-up': t>=50}"></i>
+        <input  type="button" value="Position" (click)="onPosition(indice,compteur)">
+    </li>
+
+    </ng-container>
+   
+</ul>
+<h2>{{ titre2 }}</h2>
